@@ -16,12 +16,12 @@ def introduce_regional_infection(dataframe):
     len_dataframe=len(dataframe.index)
     for i in range(0,len_dataframe,1):
         print("\nil contatore è arrivato a " +str(i))
-        if dataframe.loc[i,"codice_regione"]  not in region_array:
-            x=code_to_region(dataframe.loc[i,"codice_regione"])
-            y=dataframe.loc[i,"stato"]
-            z=dataframe.loc[i,"denominazione_regione"]
-            a=dataframe.loc[i,"ricoverati_con_sintomi"]
-            b=dataframe.loc[i,"terapia_intensiva"]
-            c=dataframe.loc[i,"totale_ospedalizzati"]
-            region_array.append(regional_infection(y,x,z,a,b,c))
+        x=code_to_region(dataframe.loc[i,"codice_regione"])
+        y=dataframe.loc[i,"stato"]
+        z=dataframe.loc[i,"denominazione_regione"]
+        a=dataframe.loc[i,"ricoverati_con_sintomi"]
+        b=dataframe.loc[i,"terapia_intensiva"]
+        c=dataframe.loc[i,"totale_ospedalizzati"]
+        print (x,y,z,a,b,c)
+        region_array.append(regional_infection(y,x,z,a,b,c))
 
