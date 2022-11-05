@@ -4,12 +4,12 @@ from region import *
 from covid_data import *
 from plot_graph import*
 import tkinter as tk
-
-data=pd.read_csv("https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni-20200309.csv")
+from read_data_from_url_csv import *
 
 while True:
     x=input()
-
+    if x=="read_data_from_url_csv":
+        data=read_data_from_url_csv()
     if x=="introduce_regional_infection":
         introduce_regional_infection(data)
     elif x=="plot_graph":
