@@ -8,17 +8,21 @@ from read_data_from_url_csv import *
 
 
 if __name__ == "__main__":
-    print("programma per visualizzazione delle statistiche del covid 19")
+
+    digit = ("read", "introduce", "plot", "exit")
+    print("programma per visualizzazione delle statistiche del covid 19 \nImmettere una tra le seguenti funzioni: "+ str(digit))
+
+
     while True:
         x=input()
-        if x=="read_data_from_url_csv":
+        if x==digit[0]:
             data=read_data_from_url_csv()
-        elif x=="introduce_regional_infection":
+        elif x==digit[1]:
             introduce_regional_infection(data)
-        elif x=="plot_graph":
+        elif x==digit[2]:
             region_test=input("di quale regione vuoi vedere i dati e stampare il grafico?    ")
             plot_graph(region_test,len(data.index))
-        elif x=="exit":
+        elif x==digit[3]:
             break
     print("grazie per aver usato il mio primo progetto")
 
